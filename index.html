@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <script data-require="angularjs@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+
+    </head>
+<body ng-init="">
+  <div id="top-bar">
+    <div id="smiley">
+      <img src="http://i.imgur.com/wcXgB30.png" alt="smiley face!" id="sf">
+      <br>
+    </div>
+    <img src="http://i.imgur.com/WzSuTKx.png" alt="Madlibs Logo" id="logo" />
+    <br>
+    <h1 class="app-title">Automate This!</h1>
+  </div>
+  <div id="input-section">
+    <h1>Provide the following words:</h1>
+    <table id=input-table>
+      <TR>
+        <TD>
+          <input type="text" name="MaleName" value="Male Name" ng-model="MaleName" ng-init="MaleName='Male Name'">
+        </TD>
+        <TD>
+          <input type="text" name="DirtyTask" value="Dirty Task" ng-model="DirtyTask" ng-init="DirtyTask='Dirty Task'">
+        </TD>
+        <TD>
+          <input type="text" name="OC" value="Obnoxious Celebrity" ng-model="OC" ng-init="OC='Obnoxious Celebrity'">
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <input type="text" name="JobTitle" value="Job Title" ng-model="JobTitle" ng-init="JobTitle='Job Title'">
+        </TD>
+        <TD>
+          <input type="text" name="Celebrity" value="Celebrity" ng-model="Celebrity" ng-init="Celebrity='Celebrity'">
+        </TD>
+        <TD>
+          <input type="text" name="HN" value="Huge Number" ng-model="HN" ng-init="HN='Huge Number'">
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <input type="text" name="TediousTask" value="Tedious Task" ng-model="TediousTask" ng-init="TediousTask='Tedious Task'">
+        </TD>
+        <TD>
+          <input type="text" name="UselessSkill" value="Useless Skill" ng-model="UselessSkill" ng-init="UselessSkill='Useless Skill'">
+        </TD>
+        <TD>
+          <input type="text" name="Adjective" value="Adjective" ng-model="Adjective" ng-init="Adjective='Adjective'">
+        </TD>
+      </TR>
+    </table>
+  </div>
+  <hr>
+  <div id="mad-lib">
+    <p>
+      {{ MaleName }} was a {{ JobTitle }} who love technology. Although he loved parts of his job, he absolutely hated {{ TediousTask }}. So, {{ MaleName }} met with his life mentor {{ Celebrity }} who told him to learn how to {{ UselessSkill }} with Thinkful.
+      Thinkful didn’t offer a course on {{ UselessSkill }} so he studied programming instead.
+      <br> What a great decision! With his new skills, {{ MaleName }} built a(n) {{ Adjective }} robot named {{ OC }} that not only loved {{ DirtyTask }} but did it {{ HN }} times faster.
+    </p>
+  </div>
+
+</body>
+</html>
