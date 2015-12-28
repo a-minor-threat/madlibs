@@ -16,31 +16,40 @@
   </div>
   <div id="input-section">
     <h1>Provide the following words:</h1>
+    <form name = "ML-input">  
     <table id=input-table>
       <TR>
-        <TD><input type="text" name="MaleName" ng-model="MaleName"></TD>
-        <TD><input type="text" name="DirtyTask" ng-model="DirtyTask"></TD>
-        <TD><input type="text" name="OC" ng-model="OC"></TD>
+        <td><input type="radio" name="Gender" value="M" ng-model="Gender" checked />Male</td>
+        <td><input type="radio" name="Gender" value="F" ng-model="Gender"/>Female</td> 
       </TR>
       <TR>
-        <TD><input type="text" name="JobTitle" ng-model="JobTitle"></TD>
-        <TD><input type="text" name="Celebrity" ng-model="Celebrity"></TD>
-        <TD><input type="text" name="HN" ng-model="HN"></TD>
+        <TD><input type="text" name="maleName" ng-model="maleName" ng-if="Gender==='M'"/>
+        <input type="text" name="femaleName" ng-model="femaleName" ng-if="Gender==='F'"/></TD>
+        <TD><input type="text" name="DirtyTask" ng-model="DirtyTask"/></TD>
+        <TD><input type="text" name="OC" ng-model="OC"/></TD>
       </TR>
       <TR>
-        <TD><input type="text" name="TediousTask" ng-model="TediousTask"></TD>
-        <TD><input type="text" name="UselessSkill" ng-model="UselessSkill"></TD>
-        <TD><input type="text" name="Adjective" ng-model="Adjective"></TD>
+        <TD><input type="text" name="JobTitle" ng-model="JobTitle"/></TD>
+        <TD><input type="text" name="Celebrity" ng-model="Celebrity"/></TD>
+        <TD><input type="text" name="HN" ng-model="HN"/></TD>
+      </TR>
+      <TR>
+        <TD><input type="text" name="TediousTask" ng-model="TediousTask"/></TD>
+        <TD><input type="text" name="UselessSkill" ng-model="UselessSkill"/></TD>
+        <TD><input type="text" name="Adjective" ng-model="Adjective"/></TD>
+
       </TR>
     </table>
+ </form>   
    </div> 
    <hr>
     <div id="mad-lib">
       <p>
-        {{ MaleName }} was a {{ JobTitle }} with a love of technology. Although he loved parts of his job, he absolutely hated {{ TediousTask }}. So, {{ MaleName }} met with his life mentor {{ Celebrity }} 
-        who told him to learn how to {{ UselessSkill }} with a local university. The local university didn’t offer a course on {{ UselessSkill }} so he studied programming instead.
+        
+        {{ Gender === 'F' ? femaleName: maleName }} was a {{ JobTitle }} with a love of technology. Although {{Gender === 'F'? "she":"he"}} loved parts of {{Gender === 'F'? "her":"his"}} job, {{Gender === 'F'? "she":"he"}} absolutely hated {{ TediousTask }}. So, {{ MaleName }} met with {{Gender === 'F'? "her":"his"}} life mentor {{ Celebrity }} 
+        who told {{Gender === 'F'? "her":"him"}} to learn how to {{ UselessSkill }} with a local university. The local university didn’t offer a course on {{ UselessSkill }} so {{Gender === 'F'? "she":"he"}} studied programming instead.
         <br>
-        What a great decision! With his new skills, {{ MaleName }} built a(n) {{ Adjective }} robot named {{ OC }} that not only loved {{ DirtyTask }} but did it {{ HN }} times faster.
+        What a great decision! With {{Gender === 'F'? "her":"him"}} new skills, {{ MaleName }} built a(n) {{ Adjective }} robot named {{ OC }} that not only loved {{ DirtyTask }} but did it {{ HN }} times faster.
       </p>
     </div>
 
