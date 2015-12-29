@@ -23,8 +23,8 @@
         <td><input type="radio" name="Gender" value="F" ng-model="Gender"/>Female</td> 
       </TR>
       <TR>
-        <TD><input type="text" name="maleName" ng-model="maleName" ng-if="Gender==='M'"/>
-        <input type="text" name="femaleName" ng-model="femaleName" ng-if="Gender==='F'"/></TD>
+        <TD><input type="text" name="maleName" ng-model="maleName" ng-show="Gender==='M'"/>
+        <input type="text" name="femaleName" ng-model="femaleName" ng-show="Gender==='F'"/></TD>
         <TD><input type="text" name="DirtyTask" ng-model="DirtyTask"/></TD>
         <TD><input type="text" name="OC" ng-model="OC"/></TD>
       </TR>
